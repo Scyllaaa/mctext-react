@@ -1,4 +1,3 @@
-import React from 'react';
 import { ObfuscatedText } from '../index.js';
 
 export default {

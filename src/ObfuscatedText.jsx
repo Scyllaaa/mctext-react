@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 
 export default class ObfuscatedText extends Component {
   generateText () {
-    const text = this.props.text || this.props.children || ''
+    const text = String(this.props.text || this.props.children || '')
+    const chars = this.props.randomChars || ObfuscatedText.defaultProps.randomChars
     let randomString = ''
     for (let i = 0; i < text.length; i++) {
-      randomString += this.props.randomChars[Math.floor(Math.random() * this.props.randomChars.length)]
+      randomString += chars[Math.floor(Math.random() * chars.length)]
     }
     return randomString
   }
