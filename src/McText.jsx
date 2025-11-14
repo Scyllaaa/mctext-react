@@ -5,16 +5,14 @@ import convertTextToJson from './textToJson'
 import TextComponent from './TextComponent'
 import { isString } from './util'
 
-export default function McText (props) {
-  const {
-    prefix,
-    children,
-    colormap,
-    randomChars,
-    style,
-    ...other
-  } = props
-
+export default function McText ({
+  prefix = '§',
+  children,
+  colormap = defaultColormap,
+  randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!§$%&?#',
+  style,
+  ...other
+}) {
   const component = isString(children) ? convertTextToJson(children, prefix) : children
 
   return (
@@ -54,10 +52,4 @@ McText.propTypes = {
   randomChars: PropTypes.string,
   prefix: PropTypes.string,
   style: PropTypes.object
-}
-
-McText.defaultProps = {
-  prefix: '§',
-  colormap: defaultColormap,
-  randomChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!§$%&?#'
 }

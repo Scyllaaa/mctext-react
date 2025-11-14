@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+const DEFAULT_RANDOM_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!§$%&?#'
+
 export default class ObfuscatedText extends Component {
   generateText () {
     const text = String(this.props.text || this.props.children || '')
-    const chars = this.props.randomChars || ObfuscatedText.defaultProps.randomChars
+    const chars = this.props.randomChars || DEFAULT_RANDOM_CHARS
     let randomString = ''
     for (let i = 0; i < text.length; i++) {
       randomString += chars[Math.floor(Math.random() * chars.length)]
@@ -40,5 +42,5 @@ ObfuscatedText.propTypes = {
 }
 
 ObfuscatedText.defaultProps = {
-  randomChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!§$%&?#'
+  randomChars: DEFAULT_RANDOM_CHARS
 }
