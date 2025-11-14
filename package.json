@@ -1,6 +1,6 @@
 {
   "name": "mctext-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A React component to display Minecraft-formatted text.",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -63,7 +63,8 @@
     "standard": "^8.6.0",
     "storybook": "10.0.7",
     "typescript": "^5.9.2",
-    "vite": "^7.2.2"
+    "vite": "^7.2.2",
+    "@storybook/react": "^10.0.7",
   },
   "peerDependencies": {
     "react": "^19.1.0"
@@ -72,7 +73,7 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "@storybook/react": "^10.0.7",
+
     "prop-types": "^15.5.8"
   }
 }
