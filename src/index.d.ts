@@ -45,8 +45,9 @@ declare module 'mctext-react' {
   export const defaultColormap: Colormap;
 
   export interface ObfuscatedTextProps {
-    randomChars: string;
-    text: string;
+    randomChars?: string;
+    text?: string;
+    children?: string;
   }
 
   export class ObfuscatedText extends React.Component<ObfuscatedTextProps> {}
